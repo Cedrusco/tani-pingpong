@@ -1,0 +1,10 @@
+app:
+  minDelaySeconds: 3
+  maxDelaySeconds: 10
+  topic:
+    topicName: pingpong
+kafka:
+  bootstrapServers: localhost:9092
+  kafkaAppId: ping-pong
+  autoOffsetReset: latest
+logging.level.com.cedrus: DEBUG
