@@ -3,7 +3,9 @@ package com.cedrus.tani.pingpong;
 import com.cedrus.tani.pingpong.config.AppConfig;
 import com.cedrus.tani.pingpong.config.KafkaConfig;
 import com.cedrus.tani.pingpong.config.TopicConfig;
+import com.cedrus.tani.pingpong.kafka.PongBallProducer;
 import com.cedrus.tani.pingpong.stream.PingService;
+import com.cedrus.tani.pingpong.stream.PongService;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -13,6 +15,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+
+import java.util.Locale;
 
 import static org.apache.kafka.common.requests.FetchMetadata.log;
 
@@ -40,5 +44,4 @@ public class PingPongApplication {
 			throw e;
 		}
 	}
-
 }

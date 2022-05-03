@@ -30,7 +30,7 @@ public class PongService {
         kafkaProperties.put(StreamsConfig.APPLICATION_ID_CONFIG, kafkaConfig.getKafkaAppId()+ PongTarget.PONG);
         kafkaProperties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG,kafkaConfig.getBootstrapServers());
         kafkaProperties.put("AUTO_OFFSET_RESET_CONFIG", kafkaConfig.getAutoOffsetReset());
-        final KafkaStreams pongStream = new KafkaStreams(topologyProvider.getPingPongTopology(PongTarget.PING),
+        final KafkaStreams pongStream = new KafkaStreams(topologyProvider.getPingPongTopology(PongTarget.PONG),
                 kafkaProperties);
         pongStream.start();
         log.info("Pong Stream Started");

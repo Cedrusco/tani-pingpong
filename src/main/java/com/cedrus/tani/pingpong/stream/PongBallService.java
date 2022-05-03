@@ -19,7 +19,7 @@ public class PongBallService {
         try{
             String ballAsJson = objectMapper.writeValueAsString(pongBall);
             pongBallProducer.sendMessage(ballAsJson);
-        }catch( Exception e){
+        }catch(Exception e){
             throw new RuntimeException(e);
         }
     }
