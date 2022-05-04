@@ -37,6 +37,7 @@ public class TopologyProvider {
     public Topology getPingPongTopology(PongTarget pongTarget){
         final StreamsBuilder builder =new StreamsBuilder();
         log.info("Starting to build the stream now.");
+        log.info(pongTarget.toString());
 
         final KStream<String, String> initialStream = builder.stream(topicConfig.getTopicName(),
                 Consumed.with(Serdes.String(), Serdes.String()));
@@ -63,7 +64,6 @@ public class TopologyProvider {
             throw new RuntimeException(e);
         }
     }
-
     private String serializeBall(PongBall pongBall){
         try{
             return objectMapper.writeValueAsString(pongBall);
@@ -99,6 +99,7 @@ public class TopologyProvider {
 
                 final PongBall pongBall= deserializeBall(value);
                 pongBall.flipBall();
+                log.info("target switched");
                 return serializeBall(pongBall);
             }
 

@@ -1,14 +1,11 @@
 package com.cedrus.tani.pingpong.controller;
 
-import com.cedrus.tani.pingpong.kafka.PongBallProducer;
 import com.cedrus.tani.pingpong.model.BallServeRequest;
 import com.cedrus.tani.pingpong.model.BallServeResponse;
 import com.cedrus.tani.pingpong.model.Color;
 import com.cedrus.tani.pingpong.model.PongBall;
 import com.cedrus.tani.pingpong.model.PongTarget;
 import com.cedrus.tani.pingpong.stream.PongBallService;
-import com.cedrus.tani.pingpong.stream.PongService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -8,11 +8,9 @@ import lombok.Data;
 public class PongBall {
     private final String id;
     private PongTarget pongTarget;
-    private final Color color;
+    private Color color;
 
     public void flipBall(){
-        this.pongTarget = pongTarget.equals(PongTarget.PING) ?
-                PongTarget.PONG :
-                PongTarget.PING;
+        this.pongTarget = pongTarget.equals(PongTarget.PING)?PongTarget.PONG:PongTarget.PING;
     }
 }
